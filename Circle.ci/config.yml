@@ -1,6 +1,8 @@
 version: 2.1
+
 orbs: 
     python: circleci/python@2.0.1
+    
 jobs:
   build-and-test:
     docker:
@@ -13,6 +15,7 @@ jobs:
             pytest --junitxml=test-results/junit.xml TestTriangle.py
       - store_test_results:
           path: Test Result
+          
  workflows:
   testing_triangles:
     jobs:
